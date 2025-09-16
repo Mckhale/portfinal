@@ -1,0 +1,29 @@
+[
+  {
+    "role": "Capstone Project",
+    "organisation": "EduVerso",
+    "startDate": "2025",
+    "endDate": "Present",
+    "experiences": ["Developed AI-powered microlearning app with gamification", "Used React, Node.js, and MongoDB"],
+    "imageSrc": "history/google.png"
+  },
+  {
+    "role": "portfolio",
+    "organisation": "Website",
+    "startDate": "2025",
+    "endDate": "2025",
+    "experiences": ["Designed and deployed personal portfolio with React & Vite", "Implemented responsive design with CSS"],
+    "imageSrc": "history/microsoft.png"
+  },
+  {
+    "role": "Database Management",
+    "organisation": "System Project",
+    "startDate": "2024",
+    "endDate": "2024",
+    "experiences": [
+      "Built a school voucher system using RFID technology",
+      "Worked with MySQL for backend database"
+    ],
+    "imageSrc": "history/netflix.png"
+  }
+]

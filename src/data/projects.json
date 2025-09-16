@@ -1,0 +1,33 @@
+[
+  {
+    "title": "CSS3",
+    "imageSrc": "projects/CSS3.png",
+    "description": "Used to style and design web pages controls colors, layouts, fonts, and responsiveness."
+ 
+  },
+  {
+    "title": "GitHub",
+    "imageSrc": "projects/GitHub.png",
+    "description": "Helps developers track changes in code, collaborate with others, and manage project history efficiently." 
+  },
+  {
+    "title": "HTML",
+    "imageSrc": "projects/HTML.png",
+    "description": "The backbone of web pages. Defines the structure and content of websites using elements and tags."
+  },
+  {
+    "title": "Java",
+    "imageSrc": "projects/Java.png",
+    "description": "A versatile, platform-independent programming language widely used in enterprise, Android, and backend systems."
+  },
+   {
+    "title": "JavaScript",
+    "imageSrc": "projects/JavaScript.png",
+    "description": "Web Programming Language The scripting language of the web that brings interactivity, logic, and dynamic features to websites."
+  },
+   {
+    "title": "React",
+    "imageSrc": "projects/React.png",
+    "description": "A powerful UI library for building fast, reusable, and interactive components for modern web apps."
+  }
+]

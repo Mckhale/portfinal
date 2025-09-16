@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../assets"
+		},
+		{
+			"path": "../public"
+		},
+		{
+			"path": "../react-portfolio-main"
+		},
+		{
+			"path": "."
+		}
+	]
+}
