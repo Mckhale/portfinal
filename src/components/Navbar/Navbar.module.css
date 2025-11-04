@@ -1,13 +1,18 @@
 @import "../../vars.css";
 
 .navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 61px;
-  z-index: 2;
-  margin: 0 10%;
+  padding: 18px 10%;
+  z-index: 10;
+  margin: 0;
+  backdrop-filter: blur(10px);
+  background-color: rgba(4, 21, 45, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .title {
@@ -36,6 +41,22 @@
   font-size: 25px;
   color: var(--color-text);
   text-decoration: none;
+  position: relative;
+}
+
+.menuItems a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+  transition: width 250ms ease;
+}
+
+.menuItems a:hover::after {
+  width: 100%;
 }
 
 @media screen and (max-width: 830px) {
@@ -65,18 +86,19 @@
     align-items: center;
     gap: 13px;
     border-radius: 10px;
-    background: rgb(25, 55, 109);
-    background: linear-gradient(
-      0deg,
-      rgba(25, 55, 109, 0.2) 0%,
-      rgba(25, 55, 109, 1) 100%
-    );
+    background: rgba(4, 21, 45, 0.8);
+    backdrop-filter: blur(8px);
     padding: 24px 33px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    transition: transform 250ms ease, opacity 250ms ease;
+    transform: translateY(-8px);
+    opacity: 0.95;
   }
 
   .menuOpen {
     display: flex;
     z-index: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }

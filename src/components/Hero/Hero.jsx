@@ -2,48 +2,54 @@ import React, { useState } from "react";
 import styles from "./Hero.module.css";
 
 export const Hero = () => {
-  const [setup, setSetup] = useState("");
-  const [punchline, setPunchline] = useState("");
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const fetchJoke = async () => {
+  const fetchQuote = async () => {
     setLoading(true);
     try {
-      const res = await fetch("https://official-joke-api.appspot.com/random_joke");
+      // Use the random quotes API
+      const res = await fetch("https://api.api-ninjas.com/v2/randomquotes", {
+        headers: {
+          "X-Api-Key": "5WntJ1R1pUxgaOJMDp8v6g==68aghYofWQKz9wrO",
+        },
+      });
+
       if (!res.ok) throw new Error("Network response was not ok");
 
       const data = await res.json();
-      setSetup(data.setup);      
-      setPunchline(data.punchline); 
+      const quoteData = data[0];
+      setQuote(quoteData.quote);
+      setAuthor(quoteData.author);
     } catch (err) {
-      console.error("Error fetching joke:", err);
-      alert("Failed to fetch joke. Please check your internet connection or try again later.");
-      setSetup("Failed to fetch joke. Try again!");
-      setPunchline("");
+      console.error("Error fetching quote:", err);
+      setQuote("Failed to fetch quote. Please try again later.");
+      setAuthor("");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} reveal`} data-reveal>
       <div className={styles.content}>
         <h1 className={styles.title}>Hi, I'm Mckhale</h1>
         <p className={styles.description}>
-           I'm a 4th-year IT student passionate about web development and software engineering.  
-           Currently preparing for my OJT, I'm eager to apply my skills in React, NodeJS, and database management  
-           while learning from real-world projects.
+          I'm a 4th-year IT student passionate about web development and software engineering.
+          Currently preparing for my OJT, I'm eager to apply my skills in React, NodeJS, and
+          database management while learning from real-world projects.
         </p>
 
         <div className={styles.quoteBox}>
           <p className={styles.quoteText}>
-            {setup ? `"${setup}"` : "Press the button to be happy!"}
+            {quote ? `"${quote}"` : "Press the button for motivation!"}
           </p>
-          {punchline && <p className={styles.quoteAuthor}>— {punchline}</p>}
+          {author && <p className={styles.quoteAuthor}>— {author}</p>}
         </div>
 
-        <button onClick={fetchJoke} className={styles.quoteBtn} disabled={loading}>
-          {loading ? "Loading..." : "Random Jokes!"}
+        <button onClick={fetchQuote} className={styles.quoteBtn} disabled={loading}>
+          {loading ? "Loading..." : "Get Quote"}
         </button>
 
         <a href="mailto:myemail@email.com" className={styles.contactBtn}>

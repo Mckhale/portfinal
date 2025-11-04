@@ -44,6 +44,22 @@
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 1.5px;
+  position: relative;
+}
+
+.link a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+  transition: width 250ms ease;
+}
+
+.link a:hover::after {
+  width: 100%;
 }
 
 @media screen and (max-width: 830px) {
