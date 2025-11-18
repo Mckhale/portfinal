@@ -1,0 +1,175 @@
+@import "../vars.css";
+
+.container {
+  margin: 0 auto;
+  padding: 60px 10%;
+  max-width: 1200px;
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(25,55,109,0.35) 0%, rgba(4,21,45,0) 50%),
+    radial-gradient(1000px 500px at 110% 20%, rgba(87,108,188,0.25) 0%, rgba(4,21,45,0) 50%),
+    linear-gradient(180deg, var(--color-bg) 0%, var(--color-dark) 100%);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 8px;
+  margin-bottom: 24px;
+  color: var(--color-text);
+  opacity: 0.9;
+  text-align: center;
+}
+
+.error {
+  background: rgba(255, 95, 95, 0.12);
+  border: 1px solid rgba(255, 95, 95, 0.35);
+  color: #ffd9d9;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 16px 0;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.input,
+.textarea {
+  background: rgba(25, 55, 109, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--color-text);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.button {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.button:hover {
+  background-color: #4658a3;
+  transform: translateY(-2px);
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.listTitle {
+  color: var(--color-text);
+}
+
+.empty {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(25, 55, 109, 0.35), rgba(25, 55, 109, 0.18));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 12px;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.cardDesc {
+  color: var(--color-text);
+  opacity: 0.9;
+  margin-top: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actionBtn {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.actionBtn:hover {
+  background-color: #4658a3;
+  transform: translateY(-2px);
+}
+.fileInput {
+  color: var(--color-text);
+}
+
+.previewContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.preview {
+  max-width: 280px;
+  max-height: 180px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+.editContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+.cardImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
