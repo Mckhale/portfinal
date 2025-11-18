@@ -7,7 +7,7 @@ import { Hero } from "./components/Hero/Hero";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Projects } from "./components/Projects/Projects";
 
-function App() {
+export default function App() {
   // Set up scroll reveal for elements marked with [data-reveal]
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,6 +29,7 @@ function App() {
 
     return () => observer.disconnect();
   }, []);
+  
   return (
     <div className={styles.App}>
       <Navbar />
@@ -40,5 +41,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
