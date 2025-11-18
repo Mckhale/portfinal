@@ -2,79 +2,175 @@
 
 .container {
   color: var(--color-text);
-  margin-top: 120px;
-  background-color: var(--color-secondary);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100vw;
-  padding: 58px 10%;
+  margin-top: 80px;
+  padding: 60px 10%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 8px;
+  margin-bottom: 24px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* stack on small screens */
+  gap: 24px;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr; /* perfectly even columns on desktop */
+  }
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(25, 55, 109, 0.35), rgba(25, 55, 109, 0.18));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 18px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.box {
+  /* single container panel that holds both columns */
+}
+
+.form,
+.details {
+  padding: 8px 12px; /* normalize inner padding for even feel */
+}
+
+.detailsList {
+  display: grid;
+  gap: 14px; /* consistent spacing between items */
+}
+
+.detailsItem {
+  display: grid;
+  grid-template-columns: 28px 1fr; /* icon + content */
+  align-items: center;
   gap: 10px;
 }
 
-.text h2 {
-  font-size: 80px;
-  font-weight: 700;
-  letter-spacing: 4px;
-}
-
-.text p {
-  font-size: 40px;
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  list-style: none;
-  gap: 26px;
-}
-
-.link {
-  display: flex;
+.badge {
+  display: inline-flex;
   align-items: center;
-  gap: 25px;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
 }
 
-.link a {
+.badgeIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.input,
+.textarea {
+  background: rgba(25, 55, 109, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--color-text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(70, 88, 163, 0.35);
+}
+
+.submit {
+  background: #111;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.submit:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+}
+
+.details {}
+
+.detailList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.detailItem {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: start;
+  color: var(--color-text);
+}
+
+.iconBadge {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: 16px;
+}
+
+.imgIcon {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.detailLink {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  position: relative;
-}
-
-.link a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  height: 2px;
-  width: 0;
-  background: linear-gradient(90deg, var(--color-primary), transparent);
-  transition: width 250ms ease;
-}
-
-.link a:hover::after {
-  width: 100%;
+  font-size: 20px;
+  line-height: 1.6;
 }
 
 @media screen and (max-width: 830px) {
-  .container {
-    flex-direction: column;
-    gap: 23px;
+  .grid {
+    grid-template-columns: 1fr;
   }
-
-  .text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .links {
-    align-items: center;
-  }
+}
+.detailText {
+  font-size: 20px;
+  line-height: 1.6;
 }
